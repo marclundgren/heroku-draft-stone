@@ -1,5 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+
 .App {
   text-align: center;
+  /* background: url(https://cdn0.vox-cdn.com/thumbor/GJr-x1rtmoWUFHApVyjv9MsCWAc=/247x0:2169x1081/1600x900/cdn0.vox-cdn.com/uploads/chorus_image/image/47576943/hearthstone_mobile_art.0.0.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
 }
 
 .App-logo {
@@ -9,20 +19,299 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 70px;
   padding: 20px;
   color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
 }
 
 .App-intro {
   font-size: large;
 }
 
-.App a {
-  color: #f60;
+.card {
+  position: relative;
+  display: inline-block;
+}
+
+.crop {
+  width: 200px;
+  height: 60px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.card {
+  margin: 3px;
+  color: white;
+  background-color: black;
+  width: 5rem;
+  height: 5rem;
+  border: 3px solid transparent;
+  border-radius: 2px;
+}
+
+.selection-set {
+
+}
+
+.selection-set .selected-card {
+
+}
+
+.selection-set .selected-card .card-preview {
+
+}
+.mana-bg-container {
+  background-color: #228B22;
+}
+.mana-cost {
+  flex: 2;
+  font-size: 1.5rem;
+}
+
+.mana-bg-container {
+  position: relative;
+}
+.mana-bg-container .quantity {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  padding-top: 3px;
+  padding-left: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #bbb;
+  color: black;
+}
+
+.card.free {
+  border-color: #9D8D7C;
+}
+.card.common {
+  border-color: #AFBECE;
+}
+.card.rare {
+  border-color: #0070DD;
+}
+.card.epic {
+  border-color: #A335EE;
+}
+.card.legendary {
+  border-color: #FF8000;
+}
+.card.disabled {
+  opacity: 0.5;
+}
+
+/* .selection-list .card {
+  transform: scale(0.2);
+} */
+.selection-list {
+  transform: scale(0.2);
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list.column {
+  flex-direction: column;
+}
+
+.muted {
+  opacity: 0.4;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.App-header {
+  padding: 0;
+}
+.App-header .player {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+}
+.App-header .player .name {
+  text-transform: uppercase;
+  padding: 0.5rem;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 1rem;
+}
+
+.main-scroll-container {
+  height: calc(100% - 70px);
+  overflow-y: auto;
+}
+
+.App-header .player .button span {
+  color: white;
+}
+.App-header .player {
+  transition: ease-in-out 500ms;
+}
+.App-header .player.muted-bg {
+  /* background-color: rgb(0, 0, 0, 0.4); */
+  opacity: 0.5;
+  background-color: #ccc;
+}
+
+.margined-left {
+  margin-left: 3rem;
+}
+.margined-right {
+  margin-right: 3rem;
+}
+
+.crop img {
+  /* width: 400px;
+  height: 300px;
+  margin: -75px 0 0 -100px; */
+  margin: -100px 0px 0px 0px;
+  opacity: 0.5;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+  height: 2rem;
+  font-size: 0.55rem;
+}
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mana-bg-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.info .name {
+  text-transform: uppercase;
+  width: 8rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+}
+.info .mana-cost,
+.info .name {
+  padding: 1.5rem;
+}
+
+.bg {
+  flex: 5;
+  width: auto;
+  /* HACK */
+  height: 42px;
+  overflow: hidden;
+  display: inline-block;
+}
+.bg img {
+  margin: -100px 0px 0px -70px;
+}
+
+.deck-preview ._crop {
+  margin: 0 !important;
+}
+
+.deck-code {
+  width: 9rem;
+  background-color: #eee;
+  padding: 1rem;
+  /* overflow: auto; */
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  border: 1px solid;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.deck-preview,
+.draft-preview {
+  flex-wrap: wrap;
+  height: 100%;
+  min-height: 15rem;
+  overflow: auto;
+  background-color: #ccc;
+  border: 1px solid #999;
+  border-radius: 3px;
+}
+
+.deck-preview ._crop,
+.draft-preview ._crop {
+  margin-top: 0;
+  margin-bottom: -22px;
+  margin-right: -3px;
+  margin-left: -3px;
+}
+
+.deck-preview .crop img,
+.draft-preview .crop img {
+    width: 400px;
+    height: 300px;
+    margin: -75px 0 0 -100px;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.hero-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.player-drafted-cards .card-list {
+  flex-wrap: wrap;
+}
+
+.player-drafted-cards .card-list.player-one {
+  justify-content: flex-end;
+}
+.player-drafted-cards .card-list.player-two {
+  justify-content: flex-start;
+}
+
+/* // HACKS */
+
+html, body, #root, .App {
+  height: 100%;
+}
+
+/* .card-list {
+  height: calc(100% - 70px);
+  overflow-y: auto;
+} */
+
+/* OVERRIDES */
+md-dialog {
+  max-width : 95% !important;
+  max-height : 95% !important;
 }
